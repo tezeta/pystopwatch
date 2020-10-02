@@ -600,7 +600,6 @@ class Stopwatch:
 
   def close_font_diag(self,*args):
     self.fontseldiag.hide()
-    #self.fontseldiag.destroy()
 
 
   def start(self,*args):
@@ -731,10 +730,8 @@ class Stopwatch:
 
     if ((self.twelve_hour) and (self.mode == self.TIME_DISPLAY)):
       p = 'am'
-
       if h > 12:
         p = 'pm'
-        #h -= 12
 
         self.digit_display.set_text("%01d%s%02d%s%02d%02s" % (h%12,self.marker,m,self.marker,s,p))
     else:
