@@ -227,7 +227,7 @@ class Stopwatch:
 
 
   def __init__(self, name='pyStopwatch', display_font=Pango.FontDescription('DejaVu Sans Ultra-Light 36'),
-                marker=':', alarm_cmd='', alarm_txt='%t', mode=None, start_in_tray=False):
+                marker=':', alarm_cmd='paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga', alarm_txt='%t', mode=None, start_in_tray=False):
     self.name = name
     self.display_font = display_font
     self.marker = marker
@@ -251,7 +251,7 @@ class Stopwatch:
     cache_dir = get_cache_dir(self.name)
     self.conf = os.path.join(config_dir, self.name+'.conf')
 
-    self.close_to_tray = False
+    self.close_to_tray = True
     self.twelve_hour = True
     self.is_running = []
     self.hours = []
