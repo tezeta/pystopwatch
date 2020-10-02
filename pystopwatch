@@ -732,8 +732,13 @@ class Stopwatch:
       p = 'am'
       if h > 12:
         p = 'pm'
+        h -= 12
+      elif h == 12:
+        p = 'pm'
+      elif h == 0:
+        h = 12
 
-        self.digit_display.set_text("%01d%s%02d%s%02d%02s" % (h%12,self.marker,m,self.marker,s,p))
+      self.digit_display.set_text("%01d%s%02d%s%02d%02s" % (h,self.marker,m,self.marker,s,p))
     else:
       self.digit_display.set_text("%02d%s%02d%s%02d" % (h,self.marker,m,self.marker,s))
 
