@@ -590,7 +590,6 @@ class Stopwatch:
   def set_font(self,*args):
     self.display_font = Pango.FontDescription(self.fontseldiag.get_font_name())
     self.digit_display.modify_font(self.display_font)
-    #self.prefs_win.font_label.set_text("Font: "+self.display_font.to_string())
     self.prefs_win.font_button.set_label(self.display_font.to_string())
 
   def set_font_and_close(self,*args):
@@ -889,13 +888,6 @@ class Stopwatch:
     else:
       handler()
     return True
-
-  def show(self,whatever=None):
-    if self.colorseldlg == None:
-      self.colorseldlg = Gtk.ColorSelectionDialog()
-    response = self.colorseldlg.run()
-    self.colorseldlg.hide()
-
 
   def main(self):
     Gtk.main()
